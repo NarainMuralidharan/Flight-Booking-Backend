@@ -42,8 +42,6 @@ const createBooking = async (req, res) => {
 
         await booking.save();
 
-        // Update the flight's available seats
-        flight.availableSeats -= numberOfSeats;
         await flight.save();
 
         return res.status(201).json(booking);
